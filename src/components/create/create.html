@@ -1,0 +1,42 @@
+<!-- Generated template for the CreateComponent component -->
+<form [formGroup]="form">
+    <div *ngIf="form.errors">
+        You have an errors!
+    </div>
+         <ion-item>
+           <ion-label floating>Item Name</ion-label>
+           <ion-input required formControlName="itemName" id="ItemName" [(ngModel)]="products.itemName" type="text"></ion-input>
+        </ion-item>
+                 <div *ngIf="ItemName.touched && ItemName.invalid" class="alert aler-danger">
+                        <div *ngIf="ItemName.errors.required">* Item name is Required!</div>
+                        <div *ngIf="ItemName.errors.minlength">* Item name should be minimum {{ ItemName.errors.minlength.requiredLength }} characters</div>
+                        <div *ngIf="ItemName.errors.shouldBeUnique">* Item name is already taken!</div>
+                 </div>
+        <ion-item>
+          <ion-label floating>Qty</ion-label>
+          <ion-input formControlName="itemQty" id="ItemQty" [(ngModel)]="products.itemQty" type="number"></ion-input>
+        </ion-item>
+                  <div *ngIf="ItemQty.touched && ItemQty.invalid" class="alert aler-danger">* Item Quantity is Required!</div>
+        <ion-item>
+          <ion-label floating>Brand Name</ion-label>
+          <ion-input formControlName="brandName" id="BrandName" [(ngModel)]="products.brandName"  type="text"></ion-input>
+        </ion-item>
+                    <div *ngIf="BrandName.touched && BrandName.invalid" class="alert aler-danger">
+                            <div *ngIf="BrandName.errors.required">* Brand name is Required!</div>
+                            <div *ngIf="BrandName.errors.minlength">* Brand name should be minimum {{ BrandName.errors.minlength.requiredLength }} characters</div>
+                    </div>
+        <ion-item>
+          <ion-label floating>Shipping Details</ion-label>
+          <ion-input formControlName="shippingDetails" id="ShippingDetails" [(ngModel)]="products.shippingDetails" type="text"></ion-input>
+        </ion-item>
+                    <div *ngIf="ShippingDetails.touched && ShippingDetails.invalid" class="alert aler-danger">
+                            <div *ngIf="ShippingDetails.errors.required">* Shipping address is Required!</div>
+                            <div *ngIf="ShippingDetails.errors.minlength">* Shipping address should be minimum {{ ShippingDetails.errors.minlength.requiredLength }} characters</div>
+                    </div>
+        <br>
+        <br>
+        <div style="text-align:center;">
+            <button color="dark" type="submit" (click)="AddItem()" ion-button  full>Add Item</button>    
+            <button color="secondary" (click)="goToList()"ion-button full>See Products</button>
+        </div> 
+</form>
