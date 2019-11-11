@@ -55,7 +55,7 @@
   "dependencies": {},
   "description": "Ionic Keyboard Plugin",
   "devDependencies": {
-    "np": "^2.16.0",
+    "np": "^5.1.3",
     "sync-cordova-xml": "^0.4.0"
   },
   "directories": {},
